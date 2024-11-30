@@ -29,11 +29,11 @@ jobs:
     - name: Lint Python code
       run: |
         pip install flake8
-        flake8 monitoring.py --ignore=E501
+        flake8 app.py --ignore=E501
 
-    - name: Run monitoring script
+    - name: Run app script
       run: |
-        python monitoring.py
+        python app.py
       env:
         TWILIO_SID: ${{ secrets.TWILIO_SID }}
         AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
